@@ -75,18 +75,18 @@ namespace employeeNotebook
         }
 
 
-        private static void ShowResultOfSearch(DataTable table, DataRow[] currentRows) {
-            if (currentRows.Length > 0)
-            {
-                foreach (DataRow row in currentRows)
-                {
-                    foreach (DataColumn column in table.Columns)
-                        Console.Write("{0-20}", row[column]);
-                    Console.WriteLine("\t" + row.RowState);
-                }
-            }
-            else Console.WriteLine(" search gave no result. ");
-        }
+        //private static void ShowResultOfSearch(DataTable table, DataRow[] currentRows) {
+        //    if (currentRows.Length > 0)
+        //    {
+        //        foreach (DataRow row in currentRows)
+        //        {
+        //            foreach (DataColumn column in table.Columns)
+        //                Console.Write("{0-20}", row[column]);
+        //            Console.WriteLine("\t" + row.RowState);
+        //        }
+        //    }
+        //    else Console.WriteLine(" search gave no result. ");
+        //}
 
         public static char GetChar(string message)
         {
@@ -183,7 +183,8 @@ namespace employeeNotebook
             if (result.Equals("")) Console.WriteLine("Uncknown command\n");
             else {
                 currentRows = table.Select(null, result);                    
-                ShowResultOfSearch(table,currentRows);     
+                //ShowResultOfSearch(table,currentRows);
+                ShowTable(currentRows.CopyToDataTable());
             }
         }
 

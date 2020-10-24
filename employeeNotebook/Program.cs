@@ -161,7 +161,7 @@ namespace employeeNotebook
             Console.WriteLine("to sort by year of birth, press - 'y'\n" +
                               "to sort by surname press - 's'\n" +
                               "to sort in descending order enter a value in uppercase\n");
-            ConsoleKeyInfo key = Console.ReadKey();
+            ConsoleKeyInfo key = Console.ReadKey(true);
             return key.KeyChar;
         }
 
