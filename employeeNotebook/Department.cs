@@ -31,7 +31,15 @@ namespace employeeNotebook
                 //add columns
             _departmentData.Columns.Add(idColumn);
             _departmentData.Columns.Add(department_name);
-            _departmentData.ReadXml("_departmentData.xml");
+                      // add departments rows
+            _departmentData.Rows.Add(new object[] { null, "General Management" });
+            _departmentData.Rows.Add(new object[] { null, "Finance Department" });
+            _departmentData.Rows.Add(new object[] { null, "Sales Department" });
+            _departmentData.Rows.Add(new object[] { null, "Human Resource Department" });
+            _departmentData.Rows.Add(new object[] { null, "Purchase Department" });
+            _departmentData.Rows.Add(new object[] { null, "IT Department" });
+            _departmentData.Rows.Add(new object[] { null, "Risk Mangment Department" });
+            _departmentData.Rows.Add(new object[] { null, "Marketing Department" });
         }
         //method for getting department ID by its name
         public static int GetId(string department) {
